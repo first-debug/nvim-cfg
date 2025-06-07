@@ -73,4 +73,17 @@ return {
       require("leap").add_default_mappings(true)
     end,
   },
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp", -- LSP-источник
+      "hrsh7th/cmp-buffer", -- Буфер Neovim
+      "hrsh7th/cmp-path", -- Пути файловой системы
+      "hrsh7th/cmp-cmdline", -- Командная строка
+      "saadparwaiz1/cmp_luasnip", -- Поддержка сниппетов (если используете luasnip)
+    },
+    config = function()
+      require "configs.cmp"
+    end,
+  },
 }
