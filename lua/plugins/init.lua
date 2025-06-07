@@ -75,15 +75,21 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp", -- LSP-источник
-      "hrsh7th/cmp-buffer", -- Буфер Neovim
-      "hrsh7th/cmp-path", -- Пути файловой системы
-      "hrsh7th/cmp-cmdline", -- Командная строка
-      "saadparwaiz1/cmp_luasnip", -- Поддержка сниппетов (если используете luasnip)
+      "hrsh7th/cmp-buffer", -- Дополнение из буфера
+      "hrsh7th/cmp-path", -- Дополнение путей
+      "hrsh7th/cmp-cmdline", -- Дополнение для командной строки
+      "hrsh7th/cmp-nvim-lsp-signature-help", -- Помощь по сигнатурам
+      "hrsh7th/cmp-vsnip", -- Для сниппетов vsnip (если используете)
+      -- Альтернативные движки сниппетов (раскомментируйте нужный):
+      -- "L3MON4D3/LuaSnip",        -- Для luasnip
+      -- "dcampos/nvim-snippy",     -- Для snippy
+      -- "honza/vim-snippets",      -- Для ultisnips
     },
     config = function()
-      require "configs.cmp"
+      require "configs.cmp" -- Загружаем ваш конфиг из lua/configs/cmp.lua
     end,
   },
 }
