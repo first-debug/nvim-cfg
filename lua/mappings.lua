@@ -9,7 +9,6 @@ map("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Перейти в нижнее 
 map("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Перейти в верхнее окно" })
 map("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Перейти в правое окно" })
 map("t", "<C-q>", "<C-\\><C-n>:q<CR>", { desc = "Закрыть терминал" })
-map("nt", "<C-q>", "<C-\\><C-n>:q<CR>", { desc = "Закрыть терминал" })
 map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
