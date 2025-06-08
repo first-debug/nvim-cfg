@@ -77,12 +77,12 @@ return {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
-      "hrsh7th/cmp-nvim-lsp", -- LSP-источник
-      "hrsh7th/cmp-buffer", -- Дополнение из буфера
-      "hrsh7th/cmp-path", -- Дополнение путей
-      "hrsh7th/cmp-cmdline", -- Дополнение для командной строки
+      "hrsh7th/cmp-nvim-lsp",                -- LSP-источник
+      "hrsh7th/cmp-buffer",                  -- Дополнение из буфера
+      "hrsh7th/cmp-path",                    -- Дополнение путей
+      "hrsh7th/cmp-cmdline",                 -- Дополнение для командной строки
       "hrsh7th/cmp-nvim-lsp-signature-help", -- Помощь по сигнатурам
-      "hrsh7th/cmp-vsnip", -- Для сниппетов vsnip (если используете)
+      "hrsh7th/cmp-vsnip",                   -- Для сниппетов vsnip (если используете)
       -- Альтернативные движки сниппетов (раскомментируйте нужный):
       -- "L3MON4D3/LuaSnip",        -- Для luasnip
       -- "dcampos/nvim-snippy",     -- Для snippy
