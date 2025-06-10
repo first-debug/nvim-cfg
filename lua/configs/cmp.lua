@@ -36,8 +36,8 @@ cmp.setup({
     end, { "i", "s" })
   }),
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' }, { name = 'vsnip' } -- For vsnip users.
-  }, { { name = 'buffer' }, { name = 'nvim_lsp_signature_help' } })
+  { name = 'nvim_lsp' }, { name = 'vsnip' } -- For vsnip users.
+  }, { { name = 'buffer' }, { name = 'nvim_lsp_signature_help' },  })
 })
 
 -- Set configuration for specific filetype.
@@ -62,3 +62,4 @@ cmp.setup.cmdline(':', {
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig')['ts_ls'].setup { capabilities = capabilities }
+

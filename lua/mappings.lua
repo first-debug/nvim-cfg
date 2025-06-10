@@ -3,7 +3,9 @@ require "nvchad.mappings"
 -- add yours here
 local map = vim.keymap.set
 
-
+vim.opt.tabstop = 4
+-- map("i", "<D-l>", "<cmd>call codeium#Accept()<cr>", {desc = "Accept suggestion (Cmd+L)"} )
+map("i", "<D-l>", "<cmd>codeium#Accept()<cr>")
 map("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Перейти в левое окно" }) -- из терминала
 map("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Перейти в нижнее окно" })
 map("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Перейти в верхнее окно" })
@@ -13,3 +15,4 @@ map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+

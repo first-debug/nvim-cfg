@@ -7,7 +7,7 @@ local M = {}
 local header = require "core.statusline.header"
 
 M.base46 = {
-  theme = "onedark",
+  theme = "flouromachine",
   transparency = true,
 }
 
@@ -46,4 +46,5 @@ M.nvdash = {
     { txt = "─", no_gap = true, rep = true },
   },
 }
+
 return M

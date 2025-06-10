@@ -92,4 +92,17 @@ return {
       require "configs.cmp" -- Загружаем ваш конфиг из lua/configs/cmp.lua
     end,
   },
+  {
+    "Exafunction/codeium.vim",  -- Официальный плагин
+    event = "InsertEnter",       -- Загружать только при входе в insert-режим
+    config = function()
+      -- Настройки (опционально)
+      vim.g.codeium_disable_bindings = 1  -- Отключить стандартные клавиши (если хотите свои)
+      vim.g.codeium_no_map_tab = 1        -- Не перехватывать Tab (чтобы не конфликтовал с другими плагинами)
+      vim.g.codeium_enabled = 1
+      vim.g.codeium_manual = 0
+      vim.g.codeium_idle_delay = 100
+      vim.keymap.set('i', '<D-l>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+    end
+  },
 }
