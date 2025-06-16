@@ -7,7 +7,7 @@ local M = {}
 local header = require "core.statusline.header"
 
 M.base46 = {
-  theme = "flouromachine",
+  theme = "material-deep-ocean",
   transparency = true,
 }
 
