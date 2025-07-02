@@ -82,11 +82,13 @@ return {
       "hrsh7th/cmp-path",                    -- Дополнение путей
       "hrsh7th/cmp-cmdline",                 -- Дополнение для командной строки
       "hrsh7th/cmp-nvim-lsp-signature-help", -- Помощь по сигнатурам
-      "hrsh7th/cmp-vsnip",                   -- Для сниппетов vsnip (если используете)
+      "hrsh7th/cmp-vsnip", 
+      "hrsh7th/vim-vsnip",
+      -- Для сниппетов vsnip (если используете)
       -- Альтернативные движки сниппетов (раскомментируйте нужный):
-      -- "L3MON4D3/LuaSnip",        -- Для luasnip
-      -- "dcampos/nvim-snippy",     -- Для snippy
-      -- "honza/vim-snippets",      -- Для ultisnips
+      "L3MON4D3/LuaSnip",        -- Для luasnip
+      "dcampos/nvim-snippy",     -- Для snippy
+      "honza/vim-snippets",      -- Для ultisnips
     },
     config = function()
       require "configs.cmp" -- Загружаем ваш конфиг из lua/configs/cmp.lua
