@@ -11,7 +11,11 @@ return {
     lazy = false,
     opts = {},
   },
-  -- These are some examples, uncomment them if you want to see them work!
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+-- or                              , branch = '0.1.x',
+      dependencies = { 'nvim-lua/plenary.nvim' }
+  },
   {
     "neovim/nvim-lspconfig",
     config = function()
