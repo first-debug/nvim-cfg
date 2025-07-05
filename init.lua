@@ -26,7 +26,19 @@ require("lazy").setup({
     end,
   },
 
-  { import = "plugins" },
+  { import = "plugins" }, 
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      git = {
+        enable = true,
+        ignore = false, -- Это ключевая настройка - показывать игнорируемые файлы
+      },
+      filters = {
+        git_ignored = false, -- Отключаем фильтрацию игнорируемых файлов
+      },
+    },
+  },
 }, lazy_config)
 
 -- load theme
