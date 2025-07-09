@@ -12,6 +12,8 @@ end
 vim.opt.relativenumber = true
 vim.opt.rtp:prepend(lazypath)
 
+vim.o.shell = "bash"
+
 local lazy_config = require "configs.lazy"
 
 -- load plugins

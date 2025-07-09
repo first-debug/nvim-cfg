@@ -90,9 +90,9 @@ return {
       "hrsh7th/vim-vsnip",
       -- Для сниппетов vsnip (если используете)
       -- Альтернативные движки сниппетов (раскомментируйте нужный):
-      "L3MON4D3/LuaSnip",        -- Для luasnip
-      "dcampos/nvim-snippy",     -- Для snippy
-      "honza/vim-snippets",      -- Для ultisnips
+      -- "L3MON4D3/LuaSnip",        -- Для luasnip
+      -- "dcampos/nvim-snippy",     -- Для snippy
+      -- "honza/vim-snippets",      -- Для ultisnips
     },
     config = function()
       require "configs.cmp" -- Загружаем ваш конфиг из lua/configs/cmp.lua
@@ -108,26 +108,22 @@ return {
       vim.g.codeium_enabled = 1
       vim.g.codeium_manual = 0
       vim.g.codeium_idle_delay = 100
-      vim.keymap.set('i', '<D-l>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-      vim.keymap.set('i', '<C-i>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-      vim.keymap.set('i', '<C-o>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+      vim.keymap.set('i', '<C-t>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
     end
   },
- {
-  'kristijanhusak/vim-dadbod-ui',
-  dependencies = {
-    { 'tpope/vim-dadbod', lazy = true },
-    { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true }, -- Optional
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
   },
-  cmd = {
-    'DBUI',
-    'DBUIToggle',
-    'DBUIAddConnection',
-    'DBUIFindBuffer',
+  {
+    {
+    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+      dependencies = { 'nvim-lua/plenary.nvim' }
+    }
   },
-  init = function()
-    -- Your DBUI configuration
-    vim.g.db_ui_use_nerd_fonts = 1
-  end,
-  }
 }
