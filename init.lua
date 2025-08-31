@@ -11,8 +11,9 @@ end
 
 vim.opt.relativenumber = true
 vim.opt.rtp:prepend(lazypath)
+vim.opt.clipboard = "unnamedplus"
 
-vim.o.shell = "bash"
+vim.o.shell = "zsh"
 
 local lazy_config = require "configs.lazy"
 
@@ -28,16 +29,17 @@ require("lazy").setup({
     end,
   },
 
-  { import = "plugins" }, 
+  { import = "plugins" },
   {
     "nvim-tree/nvim-tree.lua",
     opts = {
       git = {
         enable = true,
-        ignore = false, -- Это ключевая настройка - показывать игнорируемые файлы
+        ignore = false,
       },
       filters = {
-        git_ignored = false, -- Отключаем фильтрацию игнорируемых файлов
+        git_ignored = false,
+        dotfiles = false,
       },
     },
   },
