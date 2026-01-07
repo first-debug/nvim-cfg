@@ -36,7 +36,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         opts = {
             -- Список языковых серверов для автоматической установки, если они ещё не установлены. Можно указывать конкретную версию, например, pyright@1.1.339
-            ensure_installed = { "pyright", "lua_ls" },
+            ensure_installed = { "pyright", "lua_ls", "gopls", "staticcheck", "goimports" },
             automatic_installation = true, -- Автоматическая установка
             handlers = nil,
         },
