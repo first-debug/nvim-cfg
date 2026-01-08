@@ -1,25 +1,25 @@
 return {
     "hrsh7th/nvim-cmp",
-	dependencies = {
-      {
-        "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-nvim-lua",
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/cmp-path",
-        "hrsh7th/cmp-cmdline",
-        "hrsh7th/cmp-nvim-lsp-signature-help",
-      },
-	  {
-        "L3MON4D3/LuaSnip",
-        dependencies = {
-            "saadparwaiz1/cmp_luasnip",
-            "rafamadriz/friendly-snippets",
+	  dependencies = {
+        {
+          "hrsh7th/cmp-nvim-lsp",
+          "hrsh7th/cmp-nvim-lua",
+          "hrsh7th/cmp-buffer",
+          "hrsh7th/cmp-path",
+          "hrsh7th/cmp-cmdline",
+          "hrsh7th/cmp-nvim-lsp-signature-help",
         },
-        opts = { history = true, updateevents = "TextChanged,TextChangedI" },
-      },
-	},
+	    {
+          "L3MON4D3/LuaSnip",
+          dependencies = {
+              "saadparwaiz1/cmp_luasnip",
+              "rafamadriz/friendly-snippets",
+          },
+          opts = { history = true, updateevents = "TextChanged,TextChangedI" },
+        },
+	  },
 
-	config = function()
+	  config = function()
         local cmp = require("cmp")
         require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -131,12 +131,6 @@ return {
             sources = cmp.config.sources({{ name = 'path'}}, {{ name = 'cmdline'}}),
             matching = { disallow_symbol_nonprefix_matching = false },
         })
-
-        -- Подключение LSP для работы автокомплита
-        local capabilities = require('cmp_nvim_lsp').default_capabilities()
-        -- Замените <YOUR_LSP_SERVER> на нужный lsp-сервер (для каждого нужно создавать отдельный параметр)
-        -- require('lspconfig')['<YOUR_LSP_SERVER>'].setup{capabilities = capabilities}
-        require('lspconfig')['pyright'].setup{capabilities = capabilities}
 
         -- Подстановка скобок к подсказкам, которым это нужно (дополнение для nvim-autopairs)
         local cmp_autopairs = require('nvim-autopairs.completion.cmp')
