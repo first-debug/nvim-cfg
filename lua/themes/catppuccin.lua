@@ -5,7 +5,11 @@ return {
       name = "catppuccin",
       priority = 1000,
         config = function()
-            require("catppuccin").load("mocha") -- Активация цветовой схемы
+            require"catppuccin".setup({
+              flavour = "frappe", -- latte, frappe, macchiato, mocha
+              transparent_background = true
+            })
+            vim.cmd.colorscheme "catppuccin"
         end,
     },
 }
