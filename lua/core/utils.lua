@@ -34,3 +34,4 @@ _G.close_and_go_right = function()
 	vim.cmd("buffer " .. next_bufnr)
 	vim.cmd("bdelete! " .. current_buf)
 end
+

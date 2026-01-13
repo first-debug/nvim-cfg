@@ -61,3 +61,4 @@ vim.api.nvim_create_autocmd({ "InsertLeave" }, {
         vim.opt.cursorline = true
     end,
 })
+

@@ -65,7 +65,14 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", {expr = true,})
 Подсветка от Treesitter выдаёт более качественную подсветку по сравнению с LSP, но может замедлять работу Neovim в больших файлах
 Благодаря этому хоткею можно переключаться между ними в зависимости от потребностей и личных приоритетов
 --]]
-vim.keymap.set("n", "<M-T>", function() if vim.b.ts_highlight then vim.treesitter.stop() else vim.treesitter.start() end end, { desc = "Toggle Treesitter Highlight" })
+vim.keymap.set("n", "<M-t>",
+function()
+  if vim.b.ts_highlight then
+    vim.treesitter.stop()
+  else
+    vim.treesitter.start()
+  end
+end, { desc = "Toggle Treesitter Highlight" })
 
 vim.keymap.set("n", "<leader>ct", ":ColorizerToggle<CR>") -- Включить/Отключить подсветку цветовых кодов
 
@@ -80,5 +87,29 @@ vim.keymap.set("n", "<leader>u", ":URLOpenHighlightAll<CR>") -- Выделить
 vim.keymap.set("n", "<leader>c", ":URLOpenHighlightAllClear<CR>") -- Очистить все выделенные URL в текущем буфере
 
 -- Custom
-vim.keymap.set("n", "<space>w", ":w<enter>")
+vim.keymap.set("n", "<space>w", ":w<enter>") -- Сохранение
 vim.keymap.set("n", ";", ":")
+
+vim.keymap.set("n", "<space>ie",
+function()
+  local image = require("image")
+  if not image then
+    EnableImageViewer()
+  end
+  image.enable()
+end)
+vim.keymap.set("n", "<space>id",
+function()
+  local image = require("image")
+  if image then
+    image.disable()
+  end
+end)
+
+-- telescope mappings
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<space>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<space>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<space>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<space>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+

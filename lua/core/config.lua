@@ -67,3 +67,4 @@ vim.cmd("autocmd BufEnter * set fo-=c fo-=r fo-=o") -- Отключить авт
 -- vim.api.nvim_set_keymap("x", "d", '"_d', { noremap = true, silent = true }) -- Отключить копирование удаленного текста в <visual mode>
 
 vim.opt.langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz" -- Поддержка русской раскладки для встроенных команд NeoVim
+

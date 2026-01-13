@@ -31,13 +31,12 @@ return {
       },
     },
   },
-
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      local on_attach = function(client, bufnr)
+      local on_attach = function(_, bufnr)
         -- Локальные настройки для конкретного буфера
         vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
@@ -92,5 +91,5 @@ return {
         },
       })
     end,
-  },
+  }
 }
