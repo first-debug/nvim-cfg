@@ -82,7 +82,7 @@ return {
             end
           }),
 
-          function(server_name)
+          function(_)
             vim.lsp.config.server_name.setup({
               capabilities = capabilities,
               on_attach = on_attach,
@@ -91,5 +91,14 @@ return {
         },
       })
     end,
+  },
+  {
+    "folke/snacks.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      picker = { ui_select = true },
+      input = {}
+    }
   }
 }

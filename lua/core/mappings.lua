@@ -106,6 +106,8 @@ function()
   end
 end)
 
+vim.keymap.set('n', '<space>m', ":Markview toggle<CR>")
+
 -- telescope mappings
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<space>ff', builtin.find_files, { desc = 'Telescope find files' })
