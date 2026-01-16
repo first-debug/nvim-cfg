@@ -1,12 +1,13 @@
 local actions = require("telescope.actions")
 return {
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-    },
-    opts = {
+  "nvim-telescope/telescope.nvim",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  },
+  config = function()
+    local actions = require("telescope.actions")
+    require("telescope").setup({
       defaults = {
         winblend = 10,
         mappings = {
@@ -19,6 +20,6 @@ return {
           },
         },
       },
-    }
-  }
+    })
+  end
 }

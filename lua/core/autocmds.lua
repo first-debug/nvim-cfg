@@ -41,7 +41,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.opt_local.signcolumn = "no" -- Отключаем показ меток ошибок, маркеров отладки и т.д.
 
     if vim.g.lazygit_opened then
-      vim.api.nvim_buf_set_keymap(0, "t", "<Esc>", "q", { noremap = true, silent = true }) -- Esc закрывает layzigit
+      -- vim.api.nvim_buf_set_keymap(0, "t", "<Esc>", "q", { noremap = true, silent = true }) -- в lazugit Esc закрывает некоторые второстепенные окна
       vim.api.nvim_buf_set_keymap(0, "t", "dd", "q", { noremap = true, silent = true }) -- dd закрывает layzigit
     else
       vim.api.nvim_buf_set_keymap(0, "t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true }) -- Esc переключает Terminal Mode в Normal Mode
