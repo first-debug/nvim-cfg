@@ -129,7 +129,14 @@ return {
         cmp.setup.cmdline(':', {
             mapping = cmp.mapping.preset.cmdline(),
             sources = cmp.config.sources({{ name = 'path'}}, {{ name = 'cmdline'}}),
-            matching = { disallow_symbol_nonprefix_matching = false },
+            matching = {
+              disallow_fuzzy_matching = false,
+              disallow_fullfuzzy_matching = false,
+              disallow_partial_fuzzy_matching = true,
+              disallow_partial_matching = false,
+              disallow_prefix_unmatching = false,
+              disallow_symbol_nonprefix_matching = false -- non-default
+            },
         })
 
         -- Подстановка скобок к подсказкам, которым это нужно (дополнение для nvim-autopairs)
