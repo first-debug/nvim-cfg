@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.opt_local.foldcolumn = "0" -- Оключаем сворачивание текста
     vim.opt_local.signcolumn = "no" -- Отключаем показ меток ошибок, маркеров отладки и т.д.
 
-    if vim.g.lazygit_opened then
+    if vim.g.lazygit_opened == 1 then
       -- vim.api.nvim_buf_set_keymap(0, "t", "<Esc>", "q", { noremap = true, silent = true }) -- в lazugit Esc закрывает некоторые второстепенные окна
       vim.api.nvim_buf_set_keymap(0, "t", "dd", "q", { noremap = true, silent = true }) -- dd закрывает layzigit
     else
