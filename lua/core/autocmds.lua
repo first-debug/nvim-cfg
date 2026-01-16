@@ -105,7 +105,6 @@ vim.api.nvim_create_autocmd({ "InsertLeave" }, {
       "nofile",    -- buftype=nofile
       "help",
       "qf",        -- quickfix
-      "",          -- no filetype
     }
 
     -- Проверяем filetype
