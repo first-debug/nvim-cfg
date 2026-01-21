@@ -1,3 +1,43 @@
+vim.api.nvim_create_autocmd({ "BufRead" }, {
+  callback = function()
+    local buf = vim.api.nvim_get_current_buf()
+    local filetype = vim.bo[buf].filetype
+    print(filetype)
+    local no_number_filetypes = {
+      "snacks_picker_input",
+      "TelescopePrompt",
+      "neo-tree-popup",
+      "toggleterm",
+      "dashboard",
+      "telescope",
+      "neo-tree",
+      "NvimTree",
+      "terminal",
+      "lazygit",
+      "prompt",    -- various prompts
+      "nofile",    -- buftype=nofile
+      "help",
+      "qf",        -- quickfix
+    }
+
+    -- Проверяем filetype
+    for _, ft in ipairs(no_number_filetypes) do
+      if filetype == ft then
+        vim.opt_local.number = false
+        -- vim.opt_local.cursorline = false
+        vim.opt_local.relativenumber = false
+        vim.opt_local.signcolumn = "no"
+        return
+      end
+    end
+    -- Если не нашли buftype в no_number_filetypes включаем номера строк
+      vim.opt_local.number = true
+      vim.opt_local.cursorline = true
+      vim.opt_local.relativenumber = true
+      vim.opt_local.signcolumn = "yes"
+  end,
+})
+
 vim.api.nvim_create_autocmd({ "LspAttach" }, {
   callback = function()
     local buf = vim.api.nvim_get_current_buf()
