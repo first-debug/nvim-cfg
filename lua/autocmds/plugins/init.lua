@@ -1,0 +1,2 @@
+require("autocmds.plugins.treesitter")
+
