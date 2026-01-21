@@ -1,5 +1,5 @@
 return {
-  init = function()
+  setup = function()
     vim.lsp.config("gopls", {
       settings = {
         gopls = {
@@ -11,7 +11,6 @@ return {
         },
       },
     })
-    vim.lsp.enable('gopls')
   end
 }
 
