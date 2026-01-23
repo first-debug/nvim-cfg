@@ -3,11 +3,11 @@ return {
     "williamboman/mason-lspconfig.nvim",
     opts = {
       ensure_installed = { "pyright", "lua_ls", "gopls" },
-      automatic_installation = true, -- Автоматическая установка
+      automatic_installation = true,
     },
     config = function()
-      -- Настройка для gopls
-      require("lsp-configs.gopls").init()
+      require("mason-lspconfig").setup()
+      require("lsp-configs.gopls").setup()
     end,
   },
 }
