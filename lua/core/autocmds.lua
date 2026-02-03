@@ -1,24 +1,25 @@
+local no_number_filetypes = {
+  "snacks_picker_input",
+  "TelescopePrompt",
+  "neo-tree-popup",
+  "snacks_input",
+  "toggleterm",
+  "dashboard",
+  "telescope",
+  "neo-tree",
+  "NvimTree",
+  "terminal",
+  "lazygit",
+  "prompt",    -- various prompts
+  "nofile",    -- buftype=nofile
+  "help",
+  "qf",        -- quickfix
+}
+
 vim.api.nvim_create_autocmd({ "BufRead" }, {
   callback = function()
     local buf = vim.api.nvim_get_current_buf()
     local filetype = vim.bo[buf].filetype
-    print(filetype)
-    local no_number_filetypes = {
-      "snacks_picker_input",
-      "TelescopePrompt",
-      "neo-tree-popup",
-      "toggleterm",
-      "dashboard",
-      "telescope",
-      "neo-tree",
-      "NvimTree",
-      "terminal",
-      "lazygit",
-      "prompt",    -- various prompts
-      "nofile",    -- buftype=nofile
-      "help",
-      "qf",        -- quickfix
-    }
 
     -- Проверяем filetype
     for _, ft in ipairs(no_number_filetypes) do
@@ -129,23 +130,6 @@ vim.api.nvim_create_autocmd({ "InsertLeave" }, {
   callback = function()
     local buf = vim.api.nvim_get_current_buf()
     local filetype = vim.bo[buf].filetype
-    print(filetype)
-    local no_number_filetypes = {
-      "snacks_picker_input",
-      "TelescopePrompt",
-      "neo-tree-popup",
-      "toggleterm",
-      "dashboard",
-      "telescope",
-      "neo-tree",
-      "NvimTree",
-      "terminal",
-      "lazygit",
-      "prompt",    -- various prompts
-      "nofile",    -- buftype=nofile
-      "help",
-      "qf",        -- quickfix
-    }
 
     -- Проверяем filetype
     for _, ft in ipairs(no_number_filetypes) do
