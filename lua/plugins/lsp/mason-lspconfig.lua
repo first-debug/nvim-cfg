@@ -11,5 +11,6 @@ return {
     config = function()
       require("mason-lspconfig").setup()
       require("lsp-configs.gopls")
+      require("lsp-configs.lua_ls")
     end,
 }
