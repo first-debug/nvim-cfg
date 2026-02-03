@@ -108,7 +108,9 @@ end)
 
 vim.keymap.set('n', '<space>m', ":Markview toggle<CR>")
 
-vim.keymap.set('n', '<space>t', ":TodoQuickFix<CR>")
+vim.keymap.set('n', '<space>td', ":TodoQuickFix<CR>")
+vim.keymap.set('n', '<space>tp', ":Telescope<CR>")
+vim.keymap.set('n', '<space>tt', ":ToggleTerm<CR>")
 
 -- vim.keymap.set('t', '<Esc>', "<C-\\><C-n>", { noremap = true, silent = true })
 -- vim.keymap.set('t', 'dd', "<C-\\><C-n>", { noremap = true, silent = true })
