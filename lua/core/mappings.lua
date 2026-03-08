@@ -122,3 +122,5 @@ vim.keymap.set('n', '<space>fg', builtin.live_grep, { desc = 'Telescope live gre
 vim.keymap.set('n', '<space>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<space>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
+vim.keymap.set('n', '<leader>/', 'gcc', { remap = true })
+vim.keymap.set('v', '<leader>/', 'gc', { remap = true })
