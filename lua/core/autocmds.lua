@@ -96,9 +96,9 @@ vim.api.nvim_create_autocmd("TermOpen", {
 -- Обрезать лишние пробелы в концах строк
 vim.api.nvim_create_autocmd("BufWritePre", {
     callback = function()
-        vim.cmd([[
-         keeppatterns %s/\s\+$//e
-      ]])
+      local view = vim.fn.winsaveview()
+      vim.cmd([[ keeppatterns %s/\s\+$//e ]])
+      vim.fn.winrestview(view)
     end,
     group = vim.api.nvim_create_augroup("TrimWhitespace", { clear = true }),
 })
