@@ -31,7 +31,9 @@ _G.close_and_go_right = function()
 	end
 
 	-- Переходим к выбранному буферу и закрываем текущий
-	vim.cmd("buffer " .. next_bufnr)
+  if next_bufnr then
+  	vim.cmd("buffer " .. next_bufnr)
+  end
 	vim.cmd("bdelete! " .. current_buf)
 end
 
